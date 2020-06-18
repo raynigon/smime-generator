@@ -1,6 +1,6 @@
 # SMIME Certificate Generator
 
-Easy SMIME Certificate Handling with elf signed certificates.
+Easy SMIME Certificate Handling with self signed certificates.
 
 ## Installation
 
@@ -19,8 +19,8 @@ generation:
     general:
         key:
             size: 4096
-        retention: 365 # one years in days
-        subject:
+        retention: 365 # default certificate retention in days
+        subject: # Define the subject template
             country: "DE"
             state: "north rhine westphalia"
             city: "Bonn"
@@ -29,11 +29,11 @@ generation:
             name: "TKK AG"
             email: "ca@tkk-ag.de"
     ca:
-        filename: "ca"
+        filename: "ca" # filename for the ca cert
         key:
             size: 4096
-            password: "****"
-        subject:
+            password: "****" # ca key password
+        subject: # override the subject template
             country: "DE"
             state: "north rhine westphalia"
             city: "Bonn"
@@ -41,15 +41,15 @@ generation:
             unit: "Dummy Unit"
             name: "TKK CA"
             email: "ca@tkk-ag.de"
-        retention: 3650 # ten years in days
+        retention: 3650 # ca certificate retention in days
     user:
         - name: "Max Mustermann"
           email: "m.mustermann@tkk-ag.de"
-          password: "test123"
+          password: "test123" # user key password
         - name: "Lina Musterfrau"
           email: "l.musterfrau@tkk-ag.de"
-          password: "test123"
-          unit: "Marketing"
+          password: "test123" # user key password
+          unit: "Marketing" # partly override the subject template
 ```
 
 ### Generate CA
