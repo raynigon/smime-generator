@@ -1,8 +1,8 @@
 import yaml
 from typing import List
 
-from model import SSLSubject
-from model.subject import of_dict as subject_of_dict
+from ..model import SSLSubject
+from ..model.subject import of_dict as subject_of_dict
 
 class GeneralConfig:
 

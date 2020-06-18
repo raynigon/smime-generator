@@ -1,4 +1,4 @@
-from service import AppConfig, CertificateGenerator
+from smime_generator.service import AppConfig, CertificateGenerator
 
 import argparse
 

@@ -1,5 +1,5 @@
 from subprocess import call
-from model import SSLSubject
+from ..model import SSLSubject
 
 from os import path
 
