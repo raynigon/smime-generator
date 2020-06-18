@@ -1,0 +1,7 @@
+__pycache__
+
+.vscode
+
+config_*.yml
+clear.sh
+.DS_Store
