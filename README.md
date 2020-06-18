@@ -1,6 +1,6 @@
 # SMIME Certificate Generator
 
-Easy SMIME Certificate Handling
+Easy SMIME Certificate Handling with elf signed certificates.
 
 ## Installation
 
@@ -9,6 +9,8 @@ Easy SMIME Certificate Handling
 3. `pip install raynigon-smime-generator`
 
 ## Usage
+
+Only tested under OSX.
 
 ### Generate Config File
 
@@ -58,7 +60,30 @@ generation:
 
 `cert_generator.py update-user`
 
+Every user gets its own folder named after his email address.
+The email address gets converted, e.g. `m.mustermann@tkk-ag.de` => `m_mustermann_at_tkk-ag_de`
+This way all certificates can be identified.
+
 ### List all certificates
 
 `cert_generator.py list`
 
+## Install Certificates
+
+### Mac OSX
+
+1. Install the CA Certificate to the mac os key chain
+2. Install the User specific .p12 to the mac os key chain
+3. Open Apple Mail, the signed and encrypted icon should appear on the right.
+4. More Details can be found here: https://support.apple.com/de-de/guide/mail/mlhlp1180/mac
+
+### IOS
+1. Transmitt the CA Certificate with Air Drop
+2. Install the CA Certificate under Settings->General->Profiles
+3. Transmitt the User specific .p12 with Air Drop
+4. Install the User specific .p12 under Settings->General->Profiles
+5. Goto Accounts -> *ACCOUNTNAME* -> Account -> Advanced
+6. Enable by pressing the sign toggle and select the certificate below
+7. Enable encryption by pressing the encryption toggle and select the certificate below
+8. Go to the mail app and try to send an email. After you entered the address a lock icon should appear.
+9. More Details can be found here: https://support.apple.com/de-de/HT202345
